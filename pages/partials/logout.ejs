@@ -1,6 +1,5 @@
 <% if (typeof authn_user != 'undefined') { %>
-   <% if (authn_user.provider == 'shibboleth' || authn_user.provider == 'google' || authn_user.provider == 'azure'
-          || authn_user.provider == 'lti') { %>
+   <% if (['shibboleth', 'google', 'azure', 'lti', 'dev'].includes(authn_user.provider)) { %>
        <a class="btn btn-secondary" href="<%= plainUrlPrefix %>/logout">Log out</a>
    <% } else { %>
        <a class="btn btn-secondary disabled">Log out</a>
